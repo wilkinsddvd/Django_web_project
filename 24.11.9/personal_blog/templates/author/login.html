@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+</head>
+<body>
+<h2>用户登录</h2>
+<h3 class="error_msg">
+    <!--- 错误信息显示在这里 --->
+    {{ msg_info }}
+</h3>
+    <form action="{% url 'author:login' %}" method="POST">
+        <!-- 用户令牌认证 模板标签 -->
+        {% csrf_token %}
+        <label for="username">账号:</label>
+        <input type="text" id="username" name="username" ><br />
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password" ><br />
+        <input type="submit" value="登录">
+    </form>
+<h3>
+</h3>
+</body>
+</html>
